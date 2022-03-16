@@ -1,0 +1,122 @@
+.section-slide {
+  width: 100vw;
+  height: 70vh;
+  padding: 0 10%;
+  h2{
+    font-weight: 700;
+    font-size: var(--h2-font-size);
+    text-align: center;
+    &:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 60px;
+      margin: 0 auto;
+      background: var(--primary-color)
+    }
+  }
+  p{
+    color: #bbb;
+    text-align: center;
+  }
+}
+
+
+@import "~swiper/swiper";
+@import "~swiper/components/navigation/navigation";
+@import "~swiper/components/pagination/pagination";
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+}
+
+.swiper-container {
+  height: 300px;
+  padding: 0 7%;
+
+  .swiper-wrapper {
+    margin: 0 auto;
+
+    div {
+      .item-title {
+        margin: 0 1rem 1rem 2rem;
+        text-align: left;
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .item-description {
+        margin: 0 1rem 1rem 2rem;
+        text-align: left;
+      }
+
+      a {
+        margin: 1rem 1rem 0 2rem;
+        border-radius: 8px;
+        background-color: #ff9100;
+        color: #fff;
+        padding: 8px 1rem;
+        font-weight: 700;
+        i{
+          font-size: 14px;
+          padding: 0 4px 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.swiper-slide {
+  text-align: left;
+  font-size: 18px;
+  background-color: var(--background-color);
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
+.swiper-slide img {
+  display: block;
+  width: 265px;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff9100;
+}
+.swiper-pagination-bullet{
+ background-color: var(--text-color);
+}
+.swiper-pagination-bullet-active {
+  background-color: #ff9100;
+}
+
+@media screen and (min-width: 1024px) {;
+  .slide-item {
+    column-gap: 5rem;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    font-size: 3.5rem;
+  }
+  .swiper-slide img {
+    width: 320px;
+  }
+}
+

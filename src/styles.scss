@@ -1,0 +1,108 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$fe-course-primary: mat-palette($mat-indigo);
+$fe-course-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$fe-course-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$fe-course-theme: mat-light-theme(
+    (
+      color: (
+        primary: $fe-course-primary,
+        accent: $fe-course-accent,
+        warn: $fe-course-warn,
+      ),
+    )
+);
+
+@include angular-material-theme($fe-course-theme);
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+@import '~swiper/swiper-bundle';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+:root {
+  --text-color: #1f1c51;
+  --primary-color: #ff9100;
+  --second-bg-color: #f7f7f7;
+  --background-color: #fff;
+  --plyr-color-main: #ff9100;
+  --bg-color: #2b2b2b;
+  --bg-color-secondary: #525252;
+  --big-font: 3rem;
+  --h1-font-size: 25rem;
+  --h2-font-size: 1.75rem;
+  --h3-font-size: 1.5rem;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --box-shadow: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body.dark-theme {
+  --text-color: #fff;
+  --background-color: #1A1525;
+  --box-shadow: #fff;
+  --second-bg-color: #271d39;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #909090;
+  border: 0 solid transparent;
+  border-radius: 50px;
+
+  &:hover {
+    background-color: #606060;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 11px;
+}
+
+.nav::-webkit-scrollbar {
+  background: transparent;
+}
+
+

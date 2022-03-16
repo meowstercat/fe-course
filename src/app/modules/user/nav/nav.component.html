@@ -1,0 +1,39 @@
+<div class="nav-wrapper">
+  <div class="flex nav-bar">
+    <div class="nav-left">
+      <div class="flex nav-menu">
+        <ul class="nav-item">
+          <li>
+            <div class="logo">
+              <a routerLink="">TrueCoder</a>
+            </div>
+          </li>
+          <li>
+            <a routerLink="dashboard" class="nav-link">Dashboard</a>
+          </li>
+          <li>
+            <a routerLink="#" class="nav-link">Course</a>
+          </li>
+          <li>
+            <a routerLink="#" class="nav-link">Pricing</a>
+          </li>
+          <li><a routerLink="course/lesson" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-item">
+        <li>
+          <a href="login-register" class="nav-login">
+            Sign In
+          </a>dock
+        </li>
+        <li>
+          <span class="dark-light-mode" (click)="changeTheme()">
+                <i [class]="currentIcon()" aria-hidden="true"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,251 @@
+<div class="wrapper" #container>
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form
+        action="#"
+        #formLogin="ngForm"
+        (ngSubmit)="login()"
+        class="sign-in-form"
+      >
+        <div class="form-group form-validate">
+          <h2 class="title">Sign In</h2>
+          <div class="input-field">
+            <i class="fa fa-user"></i>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              [(ngModel)]="loginPayload.username"
+              [ngClass]="{
+                'error-validate': formLogin.submitted && !loginPayload.username
+              }"
+            />
+          </div>
+          <div class="has-danger">
+            <div
+              *ngIf="formLogin.submitted && !loginPayload.username"
+              class="form-control-feedback"
+            >
+              * Please enter your username
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-field">
+            <i class="fa fa-lock"></i>
+            <input
+              [type]="currentType(isShowPasswodSingIn)"
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="loginPayload.password"
+              [ngClass]="{
+                'error-validate': formLogin.submitted && !loginPayload.password
+              }"
+            />
+            <i
+              [class]="currentClass(isShowPasswodSingIn)"
+              aria-hidden="false"
+              (click)="isShowPasswodSingIn = !isShowPasswodSingIn"
+            ></i>
+          </div>
+          <div class="has-danger">
+            <div
+              *ngIf="formLogin.submitted && !loginPayload.password"
+              class="form-control-feedback"
+            >
+              * Please enter your password
+            </div>
+          </div>
+        </div>
+        <div style="align-self: flex-end;margin-right: 7rem;color: #acacac">Forgot password?</div>
+<!--        <div>{{ formLogin.invalid }}</div>-->
+
+        <input
+          [disabled]="formLogin.invalid"
+          type="submit"
+          value="Login"
+          class="btn solid"
+        />
+        <p style="font-weight: bold">Don't an Account? <span (click)="onBtnSingUp(container)" style="color: #ff9100;cursor: pointer">Sign up</span></p>
+        <p class="social-text">Sign in with</p>
+        <div class="social-media">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>
+
+      <form
+        action="#"
+        #formRegister="ngForm"
+        (ngSubmit)="register()"
+        class="sign-up-form"
+      >
+        <h2 class="title">Create Account</h2>
+        <div class="form-group form-validate">
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              [(ngModel)]="registerPayload.username"
+              [ngClass]="{
+                'error-validate':
+                  formRegister.submitted && !registerPayload.username
+              }"
+            />
+          </div>
+          <div class="has-danger">
+            <div
+              *ngIf="formRegister.submitted && !registerPayload.username"
+              class="form-control-feedback"
+            >
+              * Please enter your username
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-validate">
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              [(ngModel)]="registerPayload.email"
+              [ngClass]="{
+                'error-validate':
+                  formRegister.submitted && !registerPayload.email
+              }"
+            />
+          </div>
+          <div class="has-danger">
+            <div
+              *ngIf="formRegister.submitted && !registerPayload.email"
+              class="form-control-feedback"
+            >
+              * Please enter your username
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-validate">
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+              [type]="currentType(isShowPasswodSignUp)"
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="registerPayload.password"
+              [ngClass]="{
+                'error-validate':
+                  formRegister.submitted && !formRegister.password
+              }"
+            />
+            <i
+              [class]="currentClass(isShowPasswodSignUp)"
+              aria-hidden="false"
+              (click)="isShowPasswodSignUp = !isShowPasswodSignUp"
+            ></i>
+          </div>
+          <div class="has-danger">
+            <div
+              *ngIf="formRegister.submitted && !registerPayload.password"
+              class="form-control-feedback"
+            >
+              * Please enter your password
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-validate">
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+              [type]="currentType(isShowConfirmPassword)"
+              placeholder="Confirm Password"
+              name="confirmPassword"
+              [(ngModel)]="registerPayload.confirmPassword"
+              [ngClass]="{
+                'error-validate':
+                  formRegister.submitted && !registerPayload.confirmPassword
+              }"
+            />
+            <i
+              [class]="currentClass(isShowConfirmPassword)"
+              aria-hidden="false"
+              (click)="isShowConfirmPassword = !isShowConfirmPassword"
+            ></i>
+          </div>
+          <div class="has-danger">
+            <div
+              *ngIf="formRegister.submitted && !registerPayload.confirmPassword"
+              class="form-control-feedback"
+            >
+              * Please enter confirm password
+            </div>
+          </div>
+        </div>
+        <input type="submit" class="btn" value="Sign up" />
+        <p style="font-weight: bold">Already have an Account? <span (click)="onBtnSingIn(container)" style="color: #ff9100;cursor: pointer">Sign in</span></p>
+        <p class="social-text">Or Sign up with social platforms</p>
+        <div class="social-media">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>New here ?</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex
+          ratione. Aliquid!
+        </p>
+      </div>
+      <img
+        src="./../../../../../assets/image/undraw_static_assets_rpm6.svg"
+        class="image"
+        alt=""
+      />
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>One of us ?</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          laboriosam ad deleniti.
+        </p>
+      </div>
+      <img
+        src="./../../../../../assets/image/undraw_press_play_bx2d.svg"
+        class="image"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

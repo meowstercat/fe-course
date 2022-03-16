@@ -1,0 +1,47 @@
+<div class="header-wrapper">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="video">
+        <video id="plyrID" controls crossorigin playsinline>
+          <source
+            src="./../../../../../assets/lesson/SƠN TÙNG M-TP - CÓ CHẮC YÊU LÀ ĐÂY - OFFICIAL MUSIC VIDEO.webm"
+            type="video/webm"
+          />
+        </video>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="play-list">
+        <div class="title">
+          <h3>Html & css from zero to pro</h3>
+        </div>
+        <div class="list">
+          <div
+            class="lesson-item"
+            *ngFor="let item of lessonList; let i = index"
+          >
+            <a href="course/{{courseCode}}/{{item.lessonCode}}">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h4>{{ i + 1 }}.{{ item.lessonName }}</h4>
+                  <span>
+                  <i
+                    class="fa fa-clock-o"
+                    aria-hidden="true"
+                    style="font-weight: bold"
+                  ></i>
+                    {{ item.lessonTime }} min
+                </span>
+                </div>
+                <span>
+                <i class="fa fa-lock" aria-hidden="true"></i>
+              </span>
+              </div>
+            </a>
+          </div>
+          <div class="lesson-item"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

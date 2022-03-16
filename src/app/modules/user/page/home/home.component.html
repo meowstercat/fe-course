@@ -1,0 +1,106 @@
+<div class="home" style="overflow: hidden">
+  <div class="header">
+    <div class="decor">
+      <!--      <div>-->
+      <img class="bg" src="./../../../../../assets/image/bg.png" alt="" />
+      <img
+        class="dev-img"
+        src="./../../../../../assets/image/developer3.png"
+        alt=""
+      />
+      <!--      </div>-->
+    </div>
+    <div class="introduction">
+      <h2 class="intro-title">Online Learning System</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. A iusto ab
+        aliquam eaque ea omnis sequi, et mollitia illum quam voluptas
+        reprehenderit unde! Ipsa sint quia reprehenderit, consequuntur libero
+        ducimus Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+        cupiditate rerum? Animi minus aliquid officia deleniti reprehenderit,
+        itaque libero ex iste voluptas, numquam facere ad fugiat. Inventore
+        laboriosam asperiores dicta?
+      </p>
+      <button class="btn">Get Started</button>
+      <div class="social-media">
+        <a href="#" class="social-icon">
+          <i class="fa fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fa fa-google"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="courses-section">
+    <div class="courses-header">
+      <h2>Courses</h2>
+      <h3>The Most Coures Trending</h3>
+    </div>
+    <div class="courses-wrapper">
+      <div class="courses-item" *ngFor="let course of coursesList">
+        <a routerLink="course/{{ course.course_code }}/{{course.first_lesson}}">
+          <div class="item-top">
+            <img
+              src="./../../../../../assets/image/{{ course.image_path }}"
+              alt="oke"
+            />
+            <div class="price">
+              <span [class]="currentPriceTag(course.price_tag)">
+                {{ course.price_tag }}
+              </span>
+            </div>
+          </div>
+          <div class="item-bottom">
+            <h4 class="courses-title">{{ course.name }}</h4>
+            <div class="courses-duration">
+              <span
+                ><i
+                  class="fa fa-clock-o"
+                  aria-hidden="true"
+                  style="font-weight: bold; color: var(--text-color)"
+                ></i
+              ></span>
+              <span>{{ course.total_time }} min</span><span>|</span>
+              <span>{{ course.total_lessons }} lessons</span>
+            </div>
+            <p class="description">
+              {{ course.description }}
+            </p>
+            <div class="level">
+              <div>
+                <span
+                  ><i
+                    [class]="iconLevelType(course.level)"
+                    aria-hidden="true"
+                    [style]="iconLevelColor(course.level)"
+                  ></i
+                ></span>
+                <span>{{ course.level }}</span>
+              </div>
+              <div>
+                <span><i class="fa fa-users" aria-hidden="true"></i></span>
+                <span>{{ course.viewers }}</span>
+              </div>
+              <div>
+                <span>
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </span>
+                <span>Code</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <app-carousel></app-carousel>
+  <app-service></app-service>
+  <pricing-card></pricing-card>
+</div>

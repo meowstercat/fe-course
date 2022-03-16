@@ -1,0 +1,69 @@
+.wrapper {
+  background-color: red;
+}
+// main {
+//   font-family: "Montserrat Alternates", sans-serif;
+//   width: 100%;
+//   height: 100vh;
+//   margin-top: 50px;
+//   padding: 2% 10%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   overflow: hidden;
+//   .row {
+//     width: 100%;
+//     height: 48%;
+//     display: inline-flex;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     .flex-box {
+//       width: 33.3%;
+//       height: 100%;
+//       padding: 1.5% 1.5%;
+//       flex-direction: column;
+//       // justify-content: space-between;
+//       overflow: hidden;
+//       .course-text {
+//         padding: 2%;
+//         height: 45%;
+//         display: flex;
+//         flex-direction: column;
+//         background: #fff;
+//         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+//           0 6px 20px 0 rgba(0, 0, 0, 0.19);
+//         border-bottom-left-radius: 5px;
+//         border-bottom-right-radius: 5px;
+//         h6 {
+//           font-size: 14px;
+//           a {
+//             text-decoration: none;
+//           }
+//         }
+//         p {
+//           font-size: 12px;
+//         }
+//       }
+//       .course-image {
+//         width: 100%;
+//         height: 55%;
+//         background: chartreuse;
+//         overflow: hidden;
+//         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+//           0 6px 20px 0 rgba(0, 0, 0, 0.19);
+//         border-top-left-radius: 5px;
+//         border-top-right-radius: 5px;
+//         img {
+//           width: 100%;
+//           height: 100%;
+//           transform: scale(1.4);
+//         }
+//         img:hover {
+//           transform: scale(1.6);
+//           transition: 0.5s;
+//         }
+//       }
+//     }
+//   }
+// }
